@@ -14,10 +14,11 @@ public class GuidCorrelationIdGeneratorTests
         var results = new List<string>();
         var iterationsCount = 10;
 
-        // Act & Assert
+        // Act
         for (var i = 0; i < iterationsCount; i++)
            results.Add(sut.GenerateCorrelationId());
 
+        // Assert
         results.Distinct().Count().Should().Be(iterationsCount);
         results.Should().AllSatisfy(result => Guid.Parse(result));
     }
