@@ -11,7 +11,7 @@ public class TextFormatterExampleTests
     {
         // Arrange
         var selfLogMessage = string.Empty;
-        Serilog.Debugging.SelfLog.Enable(s => selfLogMessage = s);
+        Serilog.Debugging.SelfLog.Enable(message => selfLogMessage = message);
         var formatter = new TextFormatterExample();
 
         // Act
