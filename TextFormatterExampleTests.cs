@@ -12,10 +12,10 @@ public class TextFormatterExampleTests
         // Arrange
         var selfLogMessage = string.Empty;
         Serilog.Debugging.SelfLog.Enable(message => selfLogMessage = message);
-        var formatter = new TextFormatterExample();
+        var sut = new TextFormatterExample();
 
         // Act
-        formatter.Format(null, null);
+        sut.Format(null, null);
 
         // Assert
         selfLogMessage.Should().Contain(
