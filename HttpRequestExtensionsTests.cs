@@ -44,7 +44,6 @@ namespace TestProject1
             _httpContext.Request.GetOriginalUrl().Should().Be("https://google.com/api/v1/redemption-offer?parameter=123");
         }
 
-
         [Fact]
         public void GetForwardedUrl_Should_Return()
         {
@@ -57,7 +56,6 @@ namespace TestProject1
         {
             // Arrange
             SetHttpContextRequest(scheme: "http", host: "localhost", path: "/api/v1/redemption-offer", query: "?parameter=123");
-
             _httpContext.Request.Headers.Add("X-Forwarded-Proto", "https");
             _httpContext.Request.Headers.Add("X-Forwarded-Host", "google.com");
 
