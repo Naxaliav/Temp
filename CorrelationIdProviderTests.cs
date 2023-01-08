@@ -31,7 +31,7 @@ public class CorrelationIdProviderTests
         var sut = new CorrelationIdProvider(new GuidCorrelationIdGenerator());
 
         // Act & Assert
-        sut.GetCorrelationId().Should().HaveLength($"{Guid.Empty}".Length).And.NotBeNullOrWhiteSpace();
+        sut.GetCorrelationId().Should().Match(guid => Guid.Parse(guid) != Guid.Empty);
     }
 
     [Theory]
